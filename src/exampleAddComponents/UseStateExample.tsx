@@ -10,8 +10,7 @@ export function UseStateExample() {
 
     const onClickHandler_1 = () => {
         setA(a = 0);
-        console.log(a)
-    }
+     }
 
     return (
         <div className="App">

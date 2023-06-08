@@ -1,16 +1,20 @@
 import React from 'react';
 import './App.css';
 import {ButtonExample} from "./exampleAddComponents/ButtonExample";
-import {UseStateExample} from "./exampleAddComponents/useStateExample";
+import {UseStateExample} from "./exampleAddComponents/UseStateExample";
+import {CarsMapExample, StudentsMapExample} from "./exampleAddComponents/MapExample";
+import {students, topCars} from "./exampleAddComponents/AllData";
 
 
 function App() {
-  return (
-    <div className="App">
-      <ButtonExample/>
-        <UseStateExample/>
-    </div>
-  );
+    return (
+        <div>
+            {/*<ButtonExample/>*/}
+            {/*  <UseStateExample/>*/}
+            <StudentsMapExample students={students}/>
+            <CarsMapExample topCars={topCars}/>
+        </div>
+    );
 }
 
 export default App;
