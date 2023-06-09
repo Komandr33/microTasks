@@ -6,7 +6,6 @@ type StudentsType = {
     name: string
     age: number
 }
-
 type MapExampleType = {
     students: StudentsType[]
 }
@@ -15,7 +14,6 @@ type TypeOfCar = {
     manufacturer: string
     model: string
 }
-
 type TopCarsType = {
     topCars: TypeOfCar[]
 }

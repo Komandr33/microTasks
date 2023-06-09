@@ -4,7 +4,7 @@ import {ButtonExample} from "./exampleAddComponents/ButtonExample";
 import {UseStateExample} from "./exampleAddComponents/UseStateExample";
 import {CarsMapExample, StudentsMapExample} from "./exampleAddComponents/MapExample";
 import {students, topCars} from "./exampleAddComponents/AllData";
-import {Filter} from "./exampleAddComponents/Filter";
+import {FilterExample} from "./exampleAddComponents/FilterExample";
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
             {/*<UseStateExample/>*/}
             {/*<StudentsMapExample students={students}/>*/}
             {/*<CarsMapExample topCars={topCars}/>*/}
-            <Filter/>
+            <FilterExample/>
         </div>
     );
 }
