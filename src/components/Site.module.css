@@ -8,6 +8,7 @@
 
 .body {
     display: flex;
+    padding: 5vh;
 }
 
 .nav {
@@ -18,12 +19,27 @@
     font-size: 30px;
 }
 
+.visual {
+    display: flex;
+    flex-direction: row;
+    justify-content:  space-around;
+    /*gap: 5px;*/
+}
+.visual img {
+    border: 2px solid #61dafb;
+    border-radius: 5px;
+    max-width: 250px;
+}
+
+
 .content {
     background-color: #282c34;
+    border-radius: 10px;
     min-height: 400px;
     width: 70%;
     color: white;
     font-size: 30px;
+    padding: 30px;
 }
 
 .footer {

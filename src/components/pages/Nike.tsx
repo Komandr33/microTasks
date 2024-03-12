@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const PageThree = () => {
+export const Nike = () => {
   return (
     <div>
       <h2>NIKE</h2>
