@@ -18,12 +18,14 @@ export const PATH = {
 function App() {
 
   return (
-    <div>
+    <div><button id="top" ></button> {/*якорь*/}
       <div className={s.header}><h1>HEADER</h1></div>
       <div className={s.body}>
         <div className={s.nav}>
           <div><NavLink to={PATH.ADIDAS}
                         className={({isActive}) => isActive ? s.active : s.customLink}>ADIDAS</NavLink></div>
+          {/*<div><NavLink to={`${PATH.ADIDAS}${PATH.MODEL}`}*/}
+          {/*              className={({isActive}) => isActive ? s.active : s.customLink}>ADIDAS 2</NavLink></div>*/}
           <div><NavLink to={PATH.PUMA}
                         className={({isActive}) => isActive ? s.active : s.customLink}>PUMA</NavLink></div>
           <div><NavLink to={PATH.NIKE}
@@ -35,12 +37,20 @@ function App() {
             <Route path={PATH.ADIDAS} element={<Adidas/>}/>
             <Route path={PATH.PUMA} element={<Puma/>}/>
             <Route path={PATH.NIKE} element={<Nike/>}/>
-            <Route path={`${PATH.ADIDAS}${PATH.MODEL}/:id`} element={<Model/>}/>
+            {/*<Route path={`${PATH.ADIDAS}${PATH.MODEL}/:id`} element={<Model/>}/>*/}
             <Route path={'*'} element={<Error404/>}/>
+            <Route path={`${PATH.ADIDAS}/*`} element={(
+              <>
+                <Adidas/>
+                <Routes>
+                  <Route path={`${PATH.MODEL}/:id`} element={<Model/>}/>
+                </Routes>
+              </>
+            )}/>
           </Routes>
         </div>
       </div>
-      <div className={s.footer}>site 2023</div>
+      <div className={s.footer}>site 2024</div>
     </div>
   );
 }

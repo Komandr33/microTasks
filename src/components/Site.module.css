@@ -24,12 +24,13 @@
     flex-direction: row;
     justify-content:  space-around;
     /*gap: 5px;*/
+    text-align:center ;
 }
 .visual img {
     border: 2px solid #61dafb;
     border-radius: 5px;
     max-width: 250px;
-}
+   }
 
 .card {
     display: flex;
