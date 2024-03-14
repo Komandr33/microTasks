@@ -31,6 +31,21 @@
     max-width: 250px;
 }
 
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 100vh; !* чтобы центрировать по вертикали по центру на всю высоту экрана *!*/
+    flex-direction: column;
+    /*justify-items: center;*/
+}
+
+.card img {
+    border: 2px solid #5c5f60;
+    border-radius: 15px;
+    max-width: 400px;
+    margin: 30px;
+}
 
 .content {
     background-color: #282c34;

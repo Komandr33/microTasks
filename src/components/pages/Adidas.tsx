@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../Site.module.css';
+import s from '../Site.module.css';
 import {adidasArr} from './data';
 import {NavLink} from 'react-router-dom';
 import {PATH} from '../../App';
@@ -8,8 +8,8 @@ export const Adidas = () => {
   return (
     <div>
       <h2> ADIDAS</h2>
-      <div className={styles.visual}>
-        {adidasArr.map(el => <NavLink key={el.id} to={`${PATH.MODEL}/${el.id}`} className={''}>
+      <div className={s.visual}>
+        {adidasArr.map(el => <NavLink key={el.id} to={`${PATH.ADIDAS}${PATH.MODEL}/${el.id}`} className={''}>
           <img src={el.picture} alt={el.model}/>
         </NavLink>)}
       </div>
