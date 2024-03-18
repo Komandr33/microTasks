@@ -1,19 +1,26 @@
 import React from 'react';
 import s from './components/Site.module.css';
-import {NavLink, Outlet} from 'react-router-dom';
+import {Link, NavLink, Outlet, useNavigate} from 'react-router-dom';
+import {PATH} from './routes/router';
 
-
-export const PATH = {
-  ADIDAS: '/adidas',
-  PUMA: '/puma',
-  NIKE: '/nike',
-  MODEL: '/model'
-} as const
+// export const PATH = {
+//   ADIDAS: '/adidas',
+//   PUMA: '/puma',
+//   NIKE: '/nike',
+//   MODEL: '/model'
+// } as const
 
 function App() {
 
+  const navigate = useNavigate()
+  const onClickBackHandler = () => {
+    return navigate(-1)
+  }
+
   return (
-    <div><button id="top" ></button> {/*якорь*/}
+    <div>
+      <button id="top"></button>
+      {/*якорь*/}
       <div className={s.header}><h1>HEADER</h1></div>
       <div className={s.body}>
         <div className={s.nav}>
@@ -28,8 +35,14 @@ function App() {
                         className={({isActive}) => isActive ? s.active : s.customLink}>PUMA</NavLink></div>
           <div><NavLink to={PATH.NIKE}
                         className={({isActive}) => isActive ? s.active : s.customLink}>NIKE</NavLink></div>
+          <div><NavLink to={PATH.PROTECTED}
+                        className={({isActive}) => isActive ? s.active : s.customLink}>PROTECTED PAGE</NavLink></div>
         </div>
         <div className={s.content}>
+          <div className={s.HorizontalNavigation}>
+            <Link to={PATH.ADIDAS} className={s.LinkLikeButton}>ГЛАВНАЯ СТРАНИЦА(ADIDAS)</Link>
+            <button onClick={onClickBackHandler} className={s.ButtonLikeLink}>НАЗАД</button>
+          </div>
           <Outlet/>
 
           {/*<Routes>*/}

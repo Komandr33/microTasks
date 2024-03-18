@@ -6,12 +6,17 @@ import React from 'react';
 import {Puma} from '../components/pages/Puma';
 import {Nike} from '../components/pages/Nike';
 import {Model} from '../components/pages/Model';
+import {ProtectedPage} from '../components/pages/ProtectedPage';
+import {ProtectedRoute} from './ProtectedRoute';
 
 export const PATH = {
+  ROOT: '/',
   ADIDAS: '/adidas',
   PUMA: '/puma',
   NIKE: '/nike',
-  MODEL: '/model'
+  MODEL: '/model',
+  PROTECTED: '/protected',
+  ERROR: '/error'
 } as const
 
 export const router = createBrowserRouter(
@@ -21,6 +26,10 @@ export const router = createBrowserRouter(
       element: <App/>,
       errorElement: <Error404/>,
       children: [
+        {
+          path: PATH.ROOT,
+          element: <Adidas/>
+        },
         {
           path: PATH.ADIDAS,
           element: <Adidas/>
@@ -36,6 +45,18 @@ export const router = createBrowserRouter(
         {
           path: PATH.NIKE,
           element: <Nike/>
+        },
+        {
+          path: PATH.ERROR,
+          element: <Error404/>
+        },
+        {
+          path: PATH.PROTECTED,
+          element: (
+            <ProtectedRoute>
+              <ProtectedPage/>
+            </ProtectedRoute>
+          )
         },
       ]
     }

@@ -2,7 +2,8 @@ import React from 'react';
 import s from '../Site.module.css';
 import {adidasArr} from './data';
 import {NavLink} from 'react-router-dom';
-import {PATH} from '../../App';
+import {PATH} from '../../routes/router';
+
 
 export const Adidas = () => {
   return (
