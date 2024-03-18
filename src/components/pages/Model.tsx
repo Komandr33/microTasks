@@ -5,7 +5,7 @@ import s from '../Site.module.css';
 
 export function Model() {
   let params = useParams()
-  let product = adidasArr.find(el => el.id === (Number(params.id)))
+  let product = adidasArr.find(el => el.id === (params.id))
   return (
     <div className={s.card}>
       {product
@@ -18,5 +18,5 @@ export function Model() {
           : <h2>Извинете, товар закончился :(</h2>}
     </div>
   );
-};
+}
 
