@@ -22,15 +22,20 @@
 .visual {
     display: flex;
     flex-direction: row;
-    justify-content:  space-around;
+    justify-content: space-around;
     /*gap: 5px;*/
-    text-align:center ;
+    text-align: center;
 }
+
 .visual img {
     border: 2px solid #61dafb;
     border-radius: 5px;
     max-width: 250px;
-   }
+}
+
+.visual img:hover {
+    opacity: 0.8;
+}
 
 .card {
     display: flex;
@@ -78,6 +83,7 @@
 
 .LinkLikeButton {
     height: 54px;
+    padding: 0 10px;
     background-color: #007bff;
     color: #fff;
     text-decoration: none;

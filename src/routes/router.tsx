@@ -1,4 +1,4 @@
-import {createBrowserRouter} from 'react-router-dom'
+import {createBrowserRouter, Navigate} from 'react-router-dom'
 import App from '../App';
 import {Error404} from '../components/pages/Error404';
 import {Adidas} from '../components/pages/Adidas';
@@ -22,13 +22,13 @@ export const PATH = {
 export const router = createBrowserRouter(
   [
     {
-      path: '/',
+      path: PATH.ROOT,
       element: <App/>,
       errorElement: <Error404/>,
       children: [
         {
           path: PATH.ROOT,
-          element: <Adidas/>
+          element: <Navigate to={PATH.ADIDAS}/>
         },
         {
           path: PATH.ADIDAS,

@@ -10,7 +10,7 @@ export const Adidas = () => {
     <div>
       <h2> ADIDAS</h2>
       <div className={s.visual}>
-        {adidasArr.map(el => <NavLink key={el.id} to={`${PATH.ADIDAS}${PATH.MODEL}/${el.id}`} className={''}>
+        {adidasArr.map(el => <NavLink key={el.id} to={`${PATH.ADIDAS}${PATH.MODEL}/${el.id}`}>
           <img src={el.picture} alt={el.model}/>
         </NavLink>)}
       </div>
