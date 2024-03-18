@@ -1,8 +1,7 @@
-// @flow
 import * as React from 'react';
 
-type Props = {};
-export const ProtectedPage = (props: Props) => {
+
+export const ProtectedPage = () => {
   return (
     <div>
       <h3>Protected Page</h3>

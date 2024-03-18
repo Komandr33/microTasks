@@ -2,6 +2,7 @@ import React from 'react';
 import s from './components/Site.module.css';
 import {Link, NavLink, Outlet, useNavigate} from 'react-router-dom';
 import {PATH} from './routes/router';
+import {useWindowSize} from './halpers/useWindowSize';
 
 // export const PATH = {
 //   ADIDAS: '/adidas',
@@ -12,6 +13,9 @@ import {PATH} from './routes/router';
 
 function App() {
 
+
+
+  const size = useWindowSize()
   const navigate = useNavigate()
   const onClickBackHandler = () => {
     return navigate(-1)
@@ -23,21 +27,25 @@ function App() {
       {/*якорь*/}
       <div className={s.header}><h1>HEADER</h1></div>
       <div className={s.body}>
-        <div className={s.nav}>
-          <div><NavLink to={PATH.ADIDAS}
-                        className={({isActive}) => isActive ? s.active : s.customLink}>ADIDAS</NavLink></div>
-          {/*ещё вариант стилизации*/}
-          {/* <div><NavLink to={PATH.ADIDAS}*/}
-          {/*              style={({isActive} ) => { /!*деструктуризация входящего параметра*!/*/}
-          {/*                return {color: isActive ? 'lightblue' : 'green'}*/}
-          {/*              }}>ADIDAS</NavLink></div>*/}
-          <div><NavLink to={PATH.PUMA}
-                        className={({isActive}) => isActive ? s.active : s.customLink}>PUMA</NavLink></div>
-          <div><NavLink to={PATH.NIKE}
-                        className={({isActive}) => isActive ? s.active : s.customLink}>NIKE</NavLink></div>
-          <div><NavLink to={PATH.PROTECTED}
-                        className={({isActive}) => isActive ? s.active : s.customLink}>PROTECTED PAGE</NavLink></div>
-        </div>
+        {
+          size >= 1000 // если ширина экрана >= 1000px, то покажи меню навигации, иначе пустую div
+            ? <div className={s.nav}>
+              <div><NavLink to={PATH.ADIDAS}
+                            className={({isActive}) => isActive ? s.active : s.customLink}>ADIDAS</NavLink></div>
+              {/*ещё вариант стилизации*/}
+              {/* <div><NavLink to={PATH.ADIDAS}*/}
+              {/*              style={({isActive} ) => { /!*деструктуризация входящего параметра*!/*/}
+              {/*                return {color: isActive ? 'lightblue' : 'green'}*/}
+              {/*              }}>ADIDAS</NavLink></div>*/}
+              <div><NavLink to={PATH.PUMA}
+                            className={({isActive}) => isActive ? s.active : s.customLink}>PUMA</NavLink></div>
+              <div><NavLink to={PATH.NIKE}
+                            className={({isActive}) => isActive ? s.active : s.customLink}>NIKE</NavLink></div>
+              <div><NavLink to={PATH.PROTECTED}
+                            className={({isActive}) => isActive ? s.active : s.customLink}>PROTECTED PAGE</NavLink></div>
+            </div>
+            : <div></div>
+        }
         <div className={s.content}>
           <div className={s.HorizontalNavigation}>
             <Link to={PATH.ADIDAS} className={s.LinkLikeButton}>ГЛАВНАЯ СТРАНИЦА(ADIDAS)</Link>
