@@ -1,5 +1,5 @@
 import {createBrowserRouter, Navigate} from 'react-router-dom'
-import App from '../App';
+import {App} from '../App';
 import {Error404} from '../components/pages/Error404';
 import {Adidas} from '../components/pages/Adidas';
 import React from 'react';

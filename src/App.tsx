@@ -11,8 +11,7 @@ import {useWindowSize} from './halpers/useWindowSize';
 //   MODEL: '/model'
 // } as const
 
-function App() {
-
+export const App = () => {
 
 
   const size = useWindowSize()
@@ -52,7 +51,6 @@ function App() {
             <button onClick={onClickBackHandler} className={s.ButtonLikeLink}>НАЗАД</button>
           </div>
           <Outlet/>
-
           {/*<Routes>*/}
           {/*  <Route path={'/'} element={<Navigate to={PATH.ADIDAS}/>}/>*/}
           {/*  <Route path={PATH.ADIDAS} element={<Adidas/>}/>*/}
@@ -76,6 +74,3 @@ function App() {
     </div>
   );
 }
-
-
-export default App;
