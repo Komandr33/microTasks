@@ -1,18 +1,27 @@
 import React from 'react';
 import {Link, useLocation, useParams} from 'react-router-dom';
-import {adidasArr} from './data';
+import {store, storeType} from './data';
 import s from '../Site.module.css';
 import {PATH} from '../../routes/router';
 
 export function Model() {
-  const params = useParams() // предоставляет доступ к параметрам маршрута (возвращает в виде объекта)
+  // const params = useParams() // предоставляет доступ к параметрам маршрута (возвращает в виде объекта)
+  const {model, id} = useParams()
   const locale = useLocation() //предоставляет доступ к объекту location, который содержит инфу о текущем URL
 
-  let product = adidasArr.find(el => el.id === (params.id))
+  let product = model ? (store as storeType)[model].find(el => el.id === id) : null
+  // let product = null
+
+  // if (model === 'puma') {
+  //   product = store.puma.find(el => el.id === id)
+  // }
+  // if ((model === 'adidas')) {
+  //   product = store.adidas.find(el => el.id === id)
+  // }
+
+  // console.log(`${model} ${id}`)
   return (
-
     <div className={s.card}>
-
       {product
         ? <>
           <h1>{(product && product.model)}</h1>

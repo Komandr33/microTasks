@@ -21,9 +21,8 @@
 
 .visual {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
-    /*gap: 5px;*/
+    gap: 20px;
     text-align: center;
 }
 

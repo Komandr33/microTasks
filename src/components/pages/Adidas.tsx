@@ -1,18 +1,17 @@
 import React from 'react';
 import s from '../Site.module.css';
-import {adidasArr} from './data';
-import {NavLink} from 'react-router-dom';
+import {store} from './data';
+import {Link} from 'react-router-dom';
 import {PATH} from '../../routes/router';
-
 
 export const Adidas = () => {
   return (
     <div>
       <h2> ADIDAS</h2>
       <div className={s.visual}>
-        {adidasArr.map(el => <NavLink key={el.id} to={`${PATH.ADIDAS}${PATH.MODEL}/${el.id}`}>
+        {store.adidas.map(el => <Link key={el.id} to={`${PATH.ADIDAS}/${el.id}`}>
           <img src={el.picture} alt={el.model}/>
-        </NavLink>)}
+        </Link>)}
       </div>
       <p>
         <p style={{textAlign: 'right'}}><a href="#bottom" style={{textDecoration: 'none', color: 'yellow'}}>вниз</a>
@@ -43,10 +42,9 @@ export const Adidas = () => {
           have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
         </p>
         <>
-          <button id="bottom"></button>
           {/*якорь*/}
           <p style={{textAlign: 'right'}}>
-            <a href="#top" style={{textDecoration: 'none', color: 'yellow'}}>вверх</a></p>
+            <a id="bottom" href="#top" style={{textDecoration: 'none', color: 'yellow'}}>вверх</a></p>
         </>
 
       </p>

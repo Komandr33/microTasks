@@ -35,7 +35,7 @@ export const router = createBrowserRouter(
           element: <Adidas/>
         },
         {
-          path: `${PATH.ADIDAS}${PATH.MODEL}/:id`,
+          path: `:model/:id`,
           element: <Model/>
         },
         {

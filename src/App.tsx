@@ -22,9 +22,8 @@ export const App = () => {
 
   return (
     <div>
-      <button id="top"></button>
       {/*якорь*/}
-      <div className={s.header}><h1>HEADER</h1></div>
+      <div  id="top" className={s.header}><h1>HEADER</h1></div>
       <div className={s.body}>
         {
           size >= 1000 // если ширина экрана >= 1000px, то покажи меню навигации, иначе пустую div
@@ -60,12 +59,12 @@ export const App = () => {
           {/*  <Route path={'*'} element={<Error404/>}/>*/}
           {/*  /!*{вариант с вложенностью}*!/*/}
           {/*  /!*<Route path={`${PATH.ADIDAS}/*`} element={(*!/*/}
-          {/*  /!*  <>*!/*/}
-          {/*  /!*    <Adidas/>*!/*/}
-          {/*  /!*    <Routes>*!/*/}
-          {/*  /!*      <Route path={`${PATH.MODEL}/:id`} element={<Model/>}/>*!/*/}
-          {/*  /!*    </Routes>*!/*/}
-          {/*  /!*  </>*!/*/}
+          {/*  <>*/}
+          {/*    <Adidas/>*/}
+          {/*    <Routes>*/}
+          {/*      <Route path={`${PATH.MODEL}/:id`} element={<Model/>}/>*/}
+          {/*    </Routes>*/}
+          {/*  </>*/}
           {/*  /!*)}/>*!/*/}
           {/*</Routes>*/}
         </div>
