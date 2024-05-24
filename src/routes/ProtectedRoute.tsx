@@ -6,14 +6,12 @@ import {Simulate} from 'react-dom/test-utils';
 import input = Simulate.input;
 
 type PropsType = {
-  children: ReactComponentElement<any> // типизация для компонент React
+  children: ReactComponentElement<any> // типизация для компонент React или ReactNode
 };
 export const ProtectedRoute: React.FC<PropsType> = ({children}) => {
 
-
   const logged = true
   return(
-
   logged ? children : <Navigate to={PATH.ERROR}/>
 )
   ;

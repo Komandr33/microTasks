@@ -8,13 +8,15 @@ import {Nike} from '../components/pages/Nike';
 import {Model} from '../components/pages/Model';
 import {ProtectedPage} from '../components/pages/ProtectedPage';
 import {ProtectedRoute} from './ProtectedRoute';
+import {Prices} from '../components/pages/Prices';
 
 export const PATH = {
   ROOT: '/',
   ADIDAS: '/adidas',
   PUMA: '/puma',
   NIKE: '/nike',
-  MODEL: '/model',
+  MODEL: `:model/:id`,
+  PRICES: '/prices',
   PROTECTED: '/protected',
   ERROR: '/error'
 } as const
@@ -35,7 +37,7 @@ export const router = createBrowserRouter(
           element: <Adidas/>
         },
         {
-          path: `:model/:id`,
+          path: PATH.MODEL,
           element: <Model/>
         },
         {
@@ -45,6 +47,10 @@ export const router = createBrowserRouter(
         {
           path: PATH.NIKE,
           element: <Nike/>
+        },
+        {
+          path: PATH.PRICES,
+          element: <Prices/>
         },
         {
           path: PATH.ERROR,

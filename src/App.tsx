@@ -13,7 +13,6 @@ import {useWindowSize} from './halpers/useWindowSize';
 
 export const App = () => {
 
-
   const size = useWindowSize()
   const navigate = useNavigate()
   const onClickBackHandler = () => {
@@ -41,6 +40,8 @@ export const App = () => {
                             className={({isActive}) => isActive ? s.active : s.customLink}>NIKE</NavLink></div>
               <div><NavLink to={PATH.PROTECTED}
                             className={({isActive}) => isActive ? s.active : s.customLink}>PROTECTED PAGE</NavLink></div>
+              <div><NavLink to={PATH.PRICES}
+                            className={({isActive}) => isActive ? s.active : s.customLink}>PRICES</NavLink></div>
             </div>
             : <div></div>
         }
