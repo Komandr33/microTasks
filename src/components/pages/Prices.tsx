@@ -51,11 +51,11 @@ export const Prices = (props: Props) => {
     setParams({})
   }
 
-  // useEffect(() => {
+  useEffect(() => {
     if (params.get('onSale') === 'true') {
       setFilteredSneakers(sneakers.filter(s => s.onSale))
     } else setFilteredSneakers(sneakers)
-  // }, [params, sneakers])
+  }, [params, sneakers])
 
   return (
     <div>
