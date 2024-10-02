@@ -1,6 +1,6 @@
 import {createBrowserRouter, Navigate} from 'react-router-dom'
 import {App} from '../App';
-import {Error404} from '../components/pages/Error404';
+import {GlobalError} from '../GlobalError/GlobalError';
 import {Adidas} from '../components/pages/Adidas';
 import React from 'react';
 import {Puma} from '../components/pages/Puma';
@@ -26,7 +26,7 @@ export const router = createBrowserRouter(
     {
       path: PATH.ROOT,
       element: <App/>,
-      errorElement: <Error404/>,
+      errorElement: <GlobalError/>,
       children: [
         {
           path: PATH.ROOT,
@@ -54,7 +54,7 @@ export const router = createBrowserRouter(
         },
         {
           path: PATH.ERROR,
-          element: <Error404/>
+          element: <GlobalError/>
         },
         {
           path: PATH.PROTECTED,
@@ -63,6 +63,10 @@ export const router = createBrowserRouter(
               <ProtectedPage/>
             </ProtectedRoute>
           )
+        },
+        {
+          path: '*',
+          element: <GlobalError/>
         },
       ]
     }

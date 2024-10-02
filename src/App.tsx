@@ -4,17 +4,10 @@ import {Link, NavLink, Outlet, useNavigate} from 'react-router-dom';
 import {PATH} from './routes/router';
 import {useWindowSize} from './halpers/useWindowSize';
 
-// export const PATH = {
-//   ADIDAS: '/adidas',
-//   PUMA: '/puma',
-//   NIKE: '/nike',
-//   MODEL: '/model'
-// } as const
-
 export const App = () => {
-
   const size = useWindowSize()
   const navigate = useNavigate()
+
   const onClickBackHandler = () => {
     return navigate(-1)
   }
@@ -51,23 +44,24 @@ export const App = () => {
             <button onClick={onClickBackHandler} className={s.ButtonLikeLink}>НАЗАД</button>
           </div>
           <Outlet/>
-          {/*<Routes>*/}
-          {/*  <Route path={'/'} element={<Navigate to={PATH.ADIDAS}/>}/>*/}
-          {/*  <Route path={PATH.ADIDAS} element={<Adidas/>}/>*/}
-          {/*  <Route path={PATH.PUMA} element={<Puma/>}/>*/}
-          {/*  <Route path={PATH.NIKE} element={<Nike/>}/>*/}
-          {/*  <Route path={`${PATH.ADIDAS}${PATH.MODEL}/:id`} element={<Model/>}/>*/}
-          {/*  <Route path={'*'} element={<Error404/>}/>*/}
-          {/*  /!*{вариант с вложенностью}*!/*/}
-          {/*  /!*<Route path={`${PATH.ADIDAS}/*`} element={(*!/*/}
-          {/*  <>*/}
-          {/*    <Adidas/>*/}
-          {/*    <Routes>*/}
-          {/*      <Route path={`${PATH.MODEL}/:id`} element={<Model/>}/>*/}
-          {/*    </Routes>*/}
-          {/*  </>*/}
-          {/*  /!*)}/>*!/*/}
-          {/*</Routes>*/}
+          {/*<Routes>
+            <Route path={'/'} element={<Navigate to={PATH.ADIDAS}/>}/>
+            <Route path={PATH.ADIDAS} element={<Adidas/>}/>
+            <Route path={PATH.PUMA} element={<Puma/>}/>
+            <Route path={PATH.NIKE} element={<Nike/>}/>
+            <Route path={`${PATH.ADIDAS}${PATH.MODEL}/:id`} element={<Model/>}/>
+            <Route path={'*'} element={<GlobalError/>}/>
+
+            {вариант с вложенностью}
+            <Route path={`${PATH.ADIDAS}/*`} element={(
+            <>
+              <Adidas/>
+              <Routes>
+                <Route path={`${PATH.MODEL}/:id`} element={<Model/>}/>
+              </Routes>
+            </>
+            )}/>
+          </Routes>*/}
         </div>
       </div>
       <div className={s.footer}>site 2024</div>
