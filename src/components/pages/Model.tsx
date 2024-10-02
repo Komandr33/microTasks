@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, useLocation, useParams} from 'react-router-dom';
-import {store, storeType} from './data';
+import {store, storeType} from '../../state/store';
 import s from '../Site.module.css';
 import {PATH} from '../../routes/router';
 

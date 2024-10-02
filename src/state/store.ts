@@ -1,9 +1,9 @@
-import adidasModel1 from '../../assets/adidas/Superstar_standard.webp'
-import adidasModel2 from '../../assets/adidas/PostMove_standard.webp'
-import adidasModel3 from '../../assets/adidas/AdiFOM_standard.webp'
-import pumaModel1 from '../../assets/puma/krossovki-puma-trinity-open-road-393361-02-3-1000x800.jpg'
-import pumaModel2 from '../../assets/puma/krossovki-puma-trinity-mid-hybrid-leather-393985-02-3-1000x800.jpg'
-import pumaModel3 from '../../assets/puma/kedy-puma-suede-classic-xxi-374915-01-20-1000x800.jpg'
+import adidasModel1 from '../assets/adidas/Superstar_standard.webp'
+import adidasModel2 from '../assets/adidas/PostMove_standard.webp'
+import adidasModel3 from '../assets/adidas/AdiFOM_standard.webp'
+import pumaModel1 from '../assets/puma/krossovki-puma-trinity-open-road-393361-02-3-1000x800.jpg'
+import pumaModel2 from '../assets/puma/krossovki-puma-trinity-mid-hybrid-leather-393985-02-3-1000x800.jpg'
+import pumaModel3 from '../assets/puma/kedy-puma-suede-classic-xxi-374915-01-20-1000x800.jpg'
 
 export type storeItem = {
   model: string;

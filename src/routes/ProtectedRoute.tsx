@@ -1,14 +1,12 @@
 import * as React from 'react';
 import {ReactComponentElement, useState} from 'react';
-import {Navigate} from 'react-router-dom';
+import {Navigate, Outlet} from 'react-router-dom';
 import {PATH} from './router';
 
-type PropsType = {
-  children: ReactComponentElement<any> // типизация для компонент React или ReactNode
-};
-export const ProtectedRoute: React.FC<PropsType> = ({children}) => {
+
+export const ProtectedRoute = () => {
   const [isLogged, setIsLogged] = useState(false)
 
-  return isLogged ? children : <Navigate to={PATH.ERROR}/>
+  return isLogged ? <Outlet/> : <Navigate to={PATH.LOGIN}/>
 };
 

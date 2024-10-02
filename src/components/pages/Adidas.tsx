@@ -1,6 +1,6 @@
 import React from 'react';
 import s from '../Site.module.css';
-import {store} from './data';
+import {store} from '../../state/store';
 import {Link} from 'react-router-dom';
 import {PATH} from '../../routes/router';
 

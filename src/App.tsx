@@ -50,7 +50,7 @@ export const App = () => {
             <Route path={PATH.PUMA} element={<Puma/>}/>
             <Route path={PATH.NIKE} element={<Nike/>}/>
             <Route path={`${PATH.ADIDAS}${PATH.MODEL}/:id`} element={<Model/>}/>
-            <Route path={'*'} element={<GlobalError/>}/>
+            <Route path={'*'} element={<globalError/>}/>
 
             {вариант с вложенностью}
             <Route path={`${PATH.ADIDAS}/*`} element={(
